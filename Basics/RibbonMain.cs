@@ -18,11 +18,13 @@ namespace Basics
         {
             //Gets the first worksheet in the active workbook
             Worksheet worksheet = (Worksheet)Globals.Factory.GetVstoObject(Globals.ThisAddIn.Application.ActiveWorkbook.Worksheets[1]);
+            //Inserts into a cell
             worksheet.Cells[1, 1] = eb1.Text;
         }
         private void Btn2_Click(object sender, Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs e)
         {
             Worksheet worksheet = (Worksheet)Globals.Factory.GetVstoObject(Globals.ThisAddIn.Application.ActiveWorkbook.Worksheets[1]);
+            //Gets the cell - can also get a range of
             var cell = worksheet.Range["A1"];
             lb1.Label = cell.Text;
         }
