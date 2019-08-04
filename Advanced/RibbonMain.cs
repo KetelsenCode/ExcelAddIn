@@ -15,8 +15,11 @@ namespace Advanced
 
         private void Btn1_Click(object sender, Microsoft.Office.Tools.Ribbon.RibbonControlEventArgs e)
         {
+            //Saves the workbook as a CSV file
             Workbook workbook = (Workbook)Globals.Factory.GetVstoObject(Globals.ThisAddIn.Application.ActiveWorkbook);
             workbook.SaveAs(@"C:\Users\Kent\Desktop\Coding\apps\ExcelAddIn\Basics\Advanced\test.csv", Microsoft.Office.Interop.Excel.XlFileFormat.xlCSV);
+
+            //Saves the worksheet as a CSV file
             Worksheet worksheet = (Worksheet)Globals.Factory.GetVstoObject(Globals.ThisAddIn.Application.ActiveWorkbook.Worksheets[1]);
             worksheet.SaveAs(@"C:\Users\Kent\Desktop\Coding\apps\ExcelAddIn\Basics\Advanced\test2.csv", Microsoft.Office.Interop.Excel.XlFileFormat.xlCSV);
 
